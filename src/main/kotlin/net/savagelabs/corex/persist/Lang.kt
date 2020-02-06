@@ -2,19 +2,20 @@ package net.savagelabs.corex.persist
 
 import net.prosavage.baseplugin.serializer.Serializer
 
-object Config {
+/**
+ * Created on February, 06, 2020
+ *
+ * @author RarLab
+ */
+object Lang {
     @Transient private val instance = this
 
-    /* Fields -> Blocks Related */
-    var antiFireSpread = false
-
     /* Fields -> Damage Related */
-    var antiPvPWorlds = mutableListOf<String>()
-    var damageInformation = false
+    var damageInformation = "&b{name} &7has &b{health}/{max_health} &7health left."
 
     /* Save the config */
     fun save() = Serializer().save(instance)
 
     /* Load the config */
-    fun load() = Serializer().load(instance, Config::class.java, "config")!!
+    fun load() = Serializer().load(instance, Lang::class.java, "lang")!!
 }
