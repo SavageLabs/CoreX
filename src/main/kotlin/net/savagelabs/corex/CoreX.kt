@@ -1,5 +1,13 @@
 package net.savagelabs.corex
 
-class CoreX {
+import net.prosavage.baseplugin.SavagePlugin
 
+class CoreX : SavagePlugin() {
+    override fun onEnable() {
+
+    }
+
+    override fun onDisable() {
+
+    }
 }
