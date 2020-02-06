@@ -17,6 +17,16 @@ dependencies {
     implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
 }
 
+processResources {
+    eachFile { details ->
+        if (details.name.endsWith('.yml')) {
+            filter {
+                String line -> line.replaceAll('\\$\\{project.version\\}', version)
+            }
+        }
+    }
+}
+
 compileKotlin {
     kotlinOptions.jvmTarget = "1.8"
 }

@@ -1,0 +1,6 @@
+name: CoreX
+main: net.savagelabs.corex.CoreX
+version: ${project.version}
+api-version: '1.13'
+authors: [ProSavage, RarLab]
+description: 'The Universal Minecraft-Server Core'
