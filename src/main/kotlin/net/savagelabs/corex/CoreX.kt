@@ -3,6 +3,7 @@ package net.savagelabs.corex
 import net.prosavage.baseplugin.SavagePlugin
 import net.savagelabs.corex.listeners.BlockEvents
 import net.savagelabs.corex.listeners.DamageEvents
+import net.savagelabs.corex.listeners.EntityEvents
 import net.savagelabs.corex.persist.Config
 import net.savagelabs.corex.persist.Lang
 
@@ -32,7 +33,8 @@ class CoreX : SavagePlugin() {
     private fun loadListeners() {
         this.registerListeners(
             BlockEvents(),
-            DamageEvents()
+            DamageEvents(),
+            EntityEvents()
         )
     }
 }

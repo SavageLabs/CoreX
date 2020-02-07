@@ -12,6 +12,9 @@ object Config {
     var antiPvPWorlds = mutableListOf<String>()
     var damageInformation = false
 
+    /* Fields -> Entity Related */
+    var disabledMobSpawners = mutableListOf<String>()
+
     /* Save the config */
     fun save() = Serializer().save(instance)
 

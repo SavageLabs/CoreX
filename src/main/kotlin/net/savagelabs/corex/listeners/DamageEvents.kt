@@ -27,14 +27,13 @@ class DamageEvents : Listener {
     @EventHandler
     fun onAntiDamage(event: EntityDamageByEntityEvent) {
         // Checks
-        if (event.entity !is Player || event.damager !is Player) return
-        if (Config.antiPvPWorlds.isEmpty()) return
+        if (event.entity !is Player || event.damager !is Player || Config.antiPvPWorlds.isEmpty()) return
 
         // Handling - Not case-sensitive
-        val world = event.damager.world
-        val isWorld = Config.antiPvPWorlds.any { world.name.equals(it, true) }
+        val world = event.damager.world.name.toLowerCase()
+        val hasWorld = Config.antiPvPWorlds.map(String::toLowerCase).contains(world)
 
-        if (isWorld) event.isCancelled = true
+        if (hasWorld) event.isCancelled = true
     }
 
     /**
