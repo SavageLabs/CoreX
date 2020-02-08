@@ -33,13 +33,13 @@ class EntityEvents : Listener {
      */
     @EventHandler(ignoreCancelled = true)
     fun onBurn(event: EntityDamageEvent) {
+        // Checks
+        if (event.entityType != EntityType.DROPPED_ITEM) return
+
         // Necessity
         val entity = event.entity
         val entityName = entity.name.toLowerCase().replace(" ", "_")
         val hasItem = Config.disabledBurnableItems.map(String::toLowerCase).contains(entityName)
-
-        // Checks
-        if (entity.type != EntityType.DROPPED_ITEM) return
 
         // Handling
         if (hasItem) event.isCancelled = true
