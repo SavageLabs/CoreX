@@ -7,11 +7,11 @@ group 'net.savagelabs'
 version '1.0.0'
 
 repositories {
-    mavenCentral()
-    mavenLocal()
-
     maven { url 'https://hub.spigotmc.org/nexus/content/repositories/snapshots' }
     maven { url 'https://nexus.savagelabs.net/repository/maven-public/' }
+
+    mavenCentral()
+    mavenLocal()
 }
 
 dependencies {

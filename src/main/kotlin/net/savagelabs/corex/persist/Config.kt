@@ -14,6 +14,7 @@ object Config {
 
     /* Fields -> Entity Related */
     var disabledMobSpawners = mutableListOf<String>()
+    var disabledBurnableItems = mutableListOf<String>()
 
     /* Save the config */
     fun save() = Serializer().save(instance)
